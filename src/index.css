@@ -11,5 +11,9 @@ body {
 }
 
 .btn {
-  @apply shadow-none font-normal;
+  @apply shadow-none font-normal border-none;
+}
+
+.btn-base {
+  @apply hover:bg-base-300 active:bg-base-300;
 }
