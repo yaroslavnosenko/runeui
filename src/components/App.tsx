@@ -1,3 +1,10 @@
+import { ChatResolver, Footer } from '@/components'
+
 export const App = () => {
-  return <div className="">RuneUI</div>
+  return (
+    <>
+      <ChatResolver />
+      <Footer />
+    </>
+  )
 }
