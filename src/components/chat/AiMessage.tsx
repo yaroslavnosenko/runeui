@@ -8,7 +8,7 @@ export const AiMessage = () => {
   return (
     <div className="flex gap-6">
       <div className="w-14 h-14 rounded-full flex justify-center items-center flex-shrink-0 bg-base-200">
-        <BiChip className="w-6 h-6" />
+        <BiChip />
       </div>
       <div className="pt-3 prose prose-p:text-base-content/60 prose-pre:bg-base-200 prose-pre:text-base-content prose-pre:rounded-xl">
         <Markdown>{A}</Markdown>

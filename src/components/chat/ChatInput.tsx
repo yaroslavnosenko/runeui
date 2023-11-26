@@ -28,12 +28,12 @@ export const ChatInput = () => {
       />
       {value && (
         <button className="btn btn-circle btn-accent w-14 h-14">
-          <BiUpArrowAlt className="w-6 h-6" />
+          <BiUpArrowAlt />
         </button>
       )}
       {!value && (
         <button className="btn btn-circle btn-base w-14 h-14">
-          <BiPlus className="w-6 h-6" />
+          <BiPlus />
         </button>
       )}
     </div>

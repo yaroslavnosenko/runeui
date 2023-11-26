@@ -1,9 +1,11 @@
-import { ChatResolver, Footer } from '@/components'
+import { Footer } from '@/components'
+import { StartPage, ChatPage } from '@/pages'
 
 export const App = () => {
   return (
     <>
-      <ChatResolver />
+      <StartPage />
+      {/* <ChatPage /> */}
       <Footer />
     </>
   )

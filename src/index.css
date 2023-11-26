@@ -10,10 +10,15 @@ body {
   @apply focus:outline-none border-none focus:border-none;
 }
 
-.btn {
-  @apply shadow-none font-normal border-none;
+.btn,
+.input {
+  @apply shadow-none font-normal border-none focus:outline-none;
 }
 
 .btn-base {
   @apply hover:bg-base-300 active:bg-base-300;
+}
+
+svg {
+  @apply w-6 h-6;
 }
