@@ -22,3 +22,11 @@ body {
 svg {
   @apply w-6 h-6;
 }
+
+.no-scroll {
+  @apply overflow-hidden;
+}
+
+.custom-dialog {
+  @apply fixed top-0 bottom-0 right-0 left-0 overflow-auto;
+}
