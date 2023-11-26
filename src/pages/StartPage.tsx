@@ -1,5 +1,5 @@
 import { Rune } from '@/assets/Rune'
-import { ChatLink } from '@/components'
+import { ChatLink, NewChatButton } from '@/components'
 import { BiLogInCircle, BiHome } from 'react-icons/bi'
 
 export const StartPage = () => {
@@ -26,8 +26,9 @@ export const StartPage = () => {
         <p className="text-center text-base-content/60 mt-4 text-sm">v1.0.0</p>
       </section>
 
-      <section className="container px-6 mx-auto max-w-5xl mt-16">
+      <section className="container px-6 mx-auto  max-w-lg md:max-w-5xl mt-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-6">
+          <NewChatButton />
           <ChatLink />
           <ChatLink />
           <ChatLink />

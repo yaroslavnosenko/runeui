@@ -16,7 +16,7 @@ export default {
         light: {
           ...themes['light'],
           'base-content': '#121416',
-          accent: colors.teal[500],
+          accent: colors.teal[600],
           'accent-content': '#fbfdff',
         },
       },
