@@ -6,7 +6,7 @@ export const Rune = (props: IconBaseProps) => {
       version="1.1"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
-      stroke-width="3"
+      strokeWidth="3"
       stroke="currentColor"
       fill="none"
       {...props}
