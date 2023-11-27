@@ -16,12 +16,12 @@ export const BottomNavigation = () => {
   const chatName = chats.find(({ id }) => id === chatId)?.name || 'New Chat'
   return (
     <motion.nav
-      initial={{ bottom: -88, opacity: 0 }}
-      animate={{ bottom: showChatInput ? 0 : -88, opacity: 1 }}
+      initial={{ bottom: -96, opacity: 0 }}
+      animate={{ bottom: showChatInput ? 0 : -96, opacity: 1 }}
       className="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-base-100 to-transparent via-base-100 py-8"
     >
       <div className="container px-6 mx-auto max-w-3xl">
-        <menu className="flex h-14 items-start justify-center gap-6 leading-loose">
+        <menu className="flex h-16 items-start justify-center gap-6 leading-loose">
           {isHome && (
             <button
               className={classNames('link link-hover underline-offset-8', {

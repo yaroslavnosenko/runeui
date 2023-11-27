@@ -1,6 +1,6 @@
 import { Rune } from '@/assets/Rune'
 import { ChatsList } from '@/components'
-import { BiHome, BiMessageSquareAdd } from 'react-icons/bi'
+import { BiMessageSquareAdd, BiSignal5 } from 'react-icons/bi'
 import { motion } from 'framer-motion'
 
 export const StartPage = () => {
@@ -13,23 +13,23 @@ export const StartPage = () => {
       <section className="container pt-24 px-6 mx-auto max-w-lg">
         <Rune className="w-24 h-24 mx-auto" />
         <h1 className="text-3xl text-center font-medium mt-8 leading-normal">
-          Rune - Awesome UI for Your Next Local LLM Project
+          RuneUI - Open Source Client for Your Next Local LLM Project
         </h1>
-        <p className="text-center text-base-content/60 mt-4">Start from PWA</p>
+        <p className="text-center text-base-content/40 mt-4">Start from PWA</p>
         <div className="rounded-full bg-base-200 mt-16 flex">
-          <button className="btn btn-circle h-14 w-14">
-            <BiHome />
+          <button className="h-14 w-14 flex items-center justify-center">
+            <BiSignal5 />
           </button>
           <input
             placeholder="http://host:port"
-            className="input bg-transparent pr-3 px-0 h-14 flex-1 truncate"
+            className="input bg-transparent pr-3 px-0 h-14 flex-1 truncate placeholder:text-base-content/40"
           />
           <button className="btn bg-grad rounded-full h-14">
             <BiMessageSquareAdd />
             New Chat
           </button>
         </div>
-        <p className="text-center text-base-content/60 mt-4 text-sm">v1.0.0</p>
+        <p className="text-center text-base-content/40 mt-4 text-sm">v1.0.0</p>
       </section>
 
       <section className="container px-6 mx-auto  max-w-lg md:max-w-5xl mt-16">

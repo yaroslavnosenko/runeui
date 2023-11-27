@@ -14,13 +14,17 @@ export default {
       {
         light: {
           ...themes['light'],
-          'base-content': '#121416',
+          'base-content': '#000204',
+          'base-100': '#fbfdff',
+          'base-200': '#F3F5F7',
         },
       },
       {
         dark: {
           ...themes['dark'],
           'base-content': '#fbfdff',
+          'base-100': '#000204',
+          'base-200': '#141618',
         },
       },
     ],
