@@ -15,7 +15,7 @@ export const ChatInput = () => {
 
   return (
     <div className="bg-base-200 rounded-[32px] flex items-end">
-      <button className="btn btn-circle btn-base w-14 h-14">
+      <button className="btn btn-circle w-14 h-14">
         <Rune className="w-8 h-8" />
       </button>
       <textarea
@@ -32,7 +32,7 @@ export const ChatInput = () => {
         </button>
       )}
       {!value && (
-        <button className="btn btn-circle btn-base w-14 h-14">
+        <button className="btn btn-circle w-14 h-14">
           <BiPlus />
         </button>
       )}

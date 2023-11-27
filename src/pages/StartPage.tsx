@@ -16,13 +16,13 @@ export const StartPage = () => {
           Rune - Awesome UI for Your Next Local LLM Project
         </h1>
         <p className="text-center text-base-content/60 mt-4">Start from PWA</p>
-        <div className="rounded-full join bg-base-200 w-full mt-16">
+        <div className="rounded-full bg-base-200 mt-16 flex">
           <button className="btn btn-circle h-14 w-14">
             <BiHome />
           </button>
           <input
             placeholder="http://localhost:4144"
-            className="input bg-transparent px-6 h-14 flex-1"
+            className="input bg-transparent px-6 h-14 flex-1 truncate"
           />
           <button className="btn btn-circle h-14 w-14">
             <BiLogInCircle />
