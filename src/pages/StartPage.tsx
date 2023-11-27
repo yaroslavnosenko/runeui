@@ -1,6 +1,6 @@
 import { Rune } from '@/assets/Rune'
 import { ChatsList } from '@/components'
-import { BiLogInCircle, BiHome } from 'react-icons/bi'
+import { BiHome, BiMessageSquareAdd } from 'react-icons/bi'
 import { motion } from 'framer-motion'
 
 export const StartPage = () => {
@@ -22,10 +22,11 @@ export const StartPage = () => {
           </button>
           <input
             placeholder="http://localhost:4144"
-            className="input bg-transparent px-6 h-14 flex-1 truncate"
+            className="input bg-transparent pr-3 px-0 h-14 flex-1 truncate"
           />
-          <button className="btn btn-circle h-14 w-14">
-            <BiLogInCircle />
+          <button className="btn btn-accent rounded-full h-14">
+            <BiMessageSquareAdd />
+            New Chat
           </button>
         </div>
         <p className="text-center text-base-content/60 mt-4 text-sm">v1.0.0</p>

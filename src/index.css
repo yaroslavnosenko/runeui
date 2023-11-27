@@ -9,7 +9,7 @@ body {
 .btn,
 .input,
 .textarea {
-  @apply shadow-none font-normal border-none focus:outline-none focus:border-none;
+  @apply shadow-none border-none focus:outline-none focus:border-none text-base font-normal;
 }
 
 svg {

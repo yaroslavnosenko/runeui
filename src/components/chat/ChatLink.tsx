@@ -11,7 +11,7 @@ export const ChatLink = ({ name, id, ...other }: ChatLinkProps) => {
   return (
     <Link
       to={'/' + id}
-      className="flex min-w-0 items-center gap-2 link link-hover underline-offset-8 justify-center"
+      className="flex min-w-0 items-center gap-2 link link-hover underline-offset-8"
       {...other}
     >
       <BiBookmarkAlt className="flex-shrink-0" />

@@ -1,6 +1,6 @@
 import { useDialogs } from '@/hooks'
 import { motion } from 'framer-motion'
-import { ChatsList } from '..'
+import { ChatsList, NewChatLink } from '@/components'
 
 export const ChatsDialog = () => {
   const { setDialog } = useDialogs()
@@ -12,8 +12,9 @@ export const ChatsDialog = () => {
       className="custom-dialog"
       onClick={() => setDialog(null)}
     >
-      <section className="container px-6 mx-auto  max-w-lg md:max-w-5xl pt-[50vh]">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-6">
+      <section className="container px-6 mx-auto  max-w-3xl py-56">
+        <NewChatLink />
+        <div className="grid grid-cols-1 gap-x-12 gap-y-6 mt-6">
           <ChatsList />
         </div>
       </section>
