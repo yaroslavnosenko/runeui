@@ -6,13 +6,10 @@ body {
   font-family: 'Outfit Variable', sans-serif;
 }
 
-.textarea {
-  @apply focus:outline-none border-none focus:border-none;
-}
-
 .btn,
-.input {
-  @apply shadow-none font-normal border-none focus:outline-none;
+.input,
+.textarea {
+  @apply shadow-none font-normal border-none focus:outline-none focus:border-none;
 }
 
 .btn-base {

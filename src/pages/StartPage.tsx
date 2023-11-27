@@ -1,10 +1,15 @@
 import { Rune } from '@/assets/Rune'
 import { ChatLink, NewChatButton } from '@/components'
 import { BiLogInCircle, BiHome } from 'react-icons/bi'
+import { motion } from 'framer-motion'
 
 export const StartPage = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <section className="container pt-24 px-6 mx-auto max-w-lg">
         <Rune className="w-24 h-24 mx-auto" />
         <h1 className="text-3xl text-center font-medium mt-8 leading-normal">
@@ -39,6 +44,6 @@ export const StartPage = () => {
           <ChatLink id="5" name="Enhance CV for Job" />
         </div>
       </section>
-    </>
+    </motion.div>
   )
 }
