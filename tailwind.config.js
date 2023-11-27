@@ -1,7 +1,6 @@
 import typography from '@tailwindcss/typography'
 import daisyui from 'daisyui'
 import themes from 'daisyui/src/theming/themes'
-import colors from 'tailwindcss/colors'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -16,15 +15,12 @@ export default {
         light: {
           ...themes['light'],
           'base-content': '#121416',
-          accent: colors.teal[600],
-          'accent-content': '#fbfdff',
         },
       },
       {
         dark: {
           ...themes['dark'],
           'base-content': '#fbfdff',
-          accent: colors.teal[200],
         },
       },
     ],

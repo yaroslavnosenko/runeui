@@ -27,7 +27,7 @@ export const ChatInput = () => {
         value={value}
       />
       {value && (
-        <button className="btn btn-circle btn-accent w-14 h-14">
+        <button className="btn btn-circle bg-grad w-14 h-14">
           <BiUpArrowAlt />
         </button>
       )}

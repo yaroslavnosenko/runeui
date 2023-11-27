@@ -23,3 +23,23 @@ svg {
 .custom-dialog {
   @apply fixed top-0 bottom-0 right-0 left-0 overflow-auto;
 }
+
+.bg-grad {
+  background: linear-gradient(
+    90deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  background-image: linear-gradient(
+    to right,
+    rgb(242, 112, 156),
+    rgb(255, 148, 114)
+  );
+  color: white;
+}

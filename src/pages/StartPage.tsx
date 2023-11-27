@@ -21,10 +21,10 @@ export const StartPage = () => {
             <BiHome />
           </button>
           <input
-            placeholder="http://localhost:4144"
+            placeholder="http://host:port"
             className="input bg-transparent pr-3 px-0 h-14 flex-1 truncate"
           />
-          <button className="btn btn-accent rounded-full h-14">
+          <button className="btn bg-grad rounded-full h-14">
             <BiMessageSquareAdd />
             New Chat
           </button>

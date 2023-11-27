@@ -12,9 +12,9 @@ export const ChatsDialog = () => {
       className="custom-dialog"
       onClick={() => setDialog(null)}
     >
-      <section className="container px-6 mx-auto  max-w-3xl py-56">
+      <section className="container px-6 mx-auto max-w-3xl py-56">
         <NewChatLink />
-        <div className="grid grid-cols-1 gap-x-12 gap-y-6 mt-6">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-6 mt-20">
           <ChatsList />
         </div>
       </section>

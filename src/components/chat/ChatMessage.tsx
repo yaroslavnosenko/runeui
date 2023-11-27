@@ -14,7 +14,7 @@ export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
       <div
         className={classNames(
           'w-14 h-14 rounded-full flex justify-center items-center flex-shrink-0 bg-base-200',
-          [isAi ? 'bg-base-200' : 'bg-base-content'],
+          [isAi ? 'bg-grad' : 'bg-base-content'],
           [isAi ? 'text-base-content' : 'text-base-200']
         )}
       >
