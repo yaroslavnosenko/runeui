@@ -1,2 +1,2 @@
-export * from './StartPage'
+export * from './HomePage'
 export * from './ChatPage'

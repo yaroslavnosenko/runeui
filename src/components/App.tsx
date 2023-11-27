@@ -1,6 +1,6 @@
 import { BottomNavigation, Dialogs } from '@/components'
 import { DialogsProvider } from '@/contexts'
-import { StartPage, ChatPage } from '@/pages'
+import { HomePage, ChatPage } from '@/pages'
 import { AnimatePresence } from 'framer-motion'
 import { Route, HashRouter, Routes, useLocation } from 'react-router-dom'
 
@@ -9,7 +9,7 @@ const AppRoutes = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes key={location.pathname} location={location}>
-        <Route path="/" element={<StartPage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/:chatId" element={<ChatPage />} />
       </Routes>
     </AnimatePresence>
