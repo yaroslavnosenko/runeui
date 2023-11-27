@@ -1,4 +1,4 @@
-import { DocsDialog, LibDialog } from '@/components'
+import { DocsDialog, LibDialog, ChatsDialog } from '@/components'
 import { useDialogs } from '@/hooks'
 import { AnimatePresence, motion } from 'framer-motion'
 
@@ -17,6 +17,7 @@ export const Dialogs = () => {
         )}
       </AnimatePresence>
       <AnimatePresence mode="wait">
+        {activeDialog === 'chats' && <ChatsDialog key={1} />}
         {activeDialog === 'docs' && <DocsDialog key={2} />}
         {activeDialog === 'lib' && <LibDialog key={3} />}
       </AnimatePresence>

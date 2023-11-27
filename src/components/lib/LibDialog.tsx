@@ -13,9 +13,9 @@ export const LibDialog = () => {
     >
       <div className="w-full h-full flex items-center justify-center">
         <motion.h2
-          initial={{ y: 20 }}
+          initial={{ y: 48 }}
           animate={{ y: 0 }}
-          exit={{ y: 20 }}
+          exit={{ y: 48 }}
           className="text-3xl"
         >
           Comming very soon!

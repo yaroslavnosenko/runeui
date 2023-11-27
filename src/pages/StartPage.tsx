@@ -1,5 +1,5 @@
 import { Rune } from '@/assets/Rune'
-import { ChatLink, NewChatButton } from '@/components'
+import { ChatsList } from '@/components'
 import { BiLogInCircle, BiHome } from 'react-icons/bi'
 import { motion } from 'framer-motion'
 
@@ -33,15 +33,7 @@ export const StartPage = () => {
 
       <section className="container px-6 mx-auto  max-w-lg md:max-w-5xl mt-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-6">
-          <NewChatButton />
-          <ChatLink id="1" name="SVG Infinity Sign" />
-          <ChatLink
-            id="2"
-            name="Interview Outcome: Gratitude & Future Consideration"
-          />
-          <ChatLink id="3" name="Random characters, user inquiry." />
-          <ChatLink id="4" name="Can not make it. Thanks!" />
-          <ChatLink id="5" name="Enhance CV for Job" />
+          <ChatsList />
         </div>
       </section>
     </motion.div>

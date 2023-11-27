@@ -1,6 +1,7 @@
 export * from './App'
 export * from './Dialogs'
 export * from './BottomNavigation'
+export * from './ChatsList'
 export * from './chat'
 export * from './docs'
 export * from './lib'

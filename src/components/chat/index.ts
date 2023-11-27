@@ -1,4 +1,5 @@
 export * from './ChatHistory'
+export * from './ChatsDialog'
 export * from './AiMessage'
 export * from './UserMessage'
 export * from './ChatLink'

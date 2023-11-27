@@ -1,6 +1,6 @@
 import { PropsWithChildren, createContext, useState } from 'react'
 
-type Dialog = 'docs' | 'lib' | null
+type Dialog = 'docs' | 'lib' | 'chats' | null
 
 type DialogsContextValue = {
   activeDialog: Dialog
@@ -17,11 +17,10 @@ export const DialogsProvider = ({ children }: PropsWithChildren) => {
 
   const setDialog = (dialog: Dialog) => {
     setActiveDialog(dialog)
-    const bodyClass = document.getElementById('body')?.classList
     if (dialog) {
-      bodyClass?.add('no-scroll')
+      document.body.classList.add('no-scroll')
     } else {
-      bodyClass?.remove('no-scroll')
+      document.body.classList.remove('no-scroll')
     }
   }
 

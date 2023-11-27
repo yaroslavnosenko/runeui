@@ -1,4 +1,4 @@
-import { ChatInput, ChatLink } from '@/components'
+import { ChatInput } from '@/components'
 import { useDialogs } from '@/hooks'
 import { motion } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
@@ -8,6 +8,7 @@ export const BottomNavigation = () => {
   const { pathname } = useLocation()
   const { setDialog, activeDialog } = useDialogs()
   const showChatInput = pathname === '/' || activeDialog ? false : true
+  const isHome = pathname === '/'
   return (
     <motion.nav
       initial={{ bottom: -88, opacity: 0 }}
@@ -19,7 +20,39 @@ export const BottomNavigation = () => {
           className="grid justify-center gap-6 leading-loose"
           style={{ gridTemplateColumns: 'auto auto auto auto' }}
         >
-          <ChatLink id="1" onClick={() => setDialog(null)} />
+          {isHome && (
+            <button
+              className={classNames('link link-hover underline-offset-8', {
+                underline: activeDialog === null,
+              })}
+              onClick={() => setDialog(null)}
+            >
+              Home
+            </button>
+          )}
+
+          {!isHome && (
+            <>
+              <button
+                className={classNames('link link-hover underline-offset-8', {
+                  underline: activeDialog === 'chats',
+                })}
+                onClick={() => setDialog('chats')}
+              >
+                Chats
+              </button>
+
+              <button
+                className={classNames('link link-hover underline-offset-8', {
+                  underline: activeDialog === null,
+                })}
+                onClick={() => setDialog(null)}
+              >
+                Ai
+              </button>
+            </>
+          )}
+
           <button
             className={classNames('link link-hover underline-offset-8', {
               underline: activeDialog === 'docs',
@@ -28,6 +61,7 @@ export const BottomNavigation = () => {
           >
             Docs
           </button>
+
           <button
             className={classNames('link link-hover underline-offset-8', {
               underline: activeDialog === 'lib',
