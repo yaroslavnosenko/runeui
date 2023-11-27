@@ -6,12 +6,11 @@ import { Route, HashRouter, Routes, useLocation } from 'react-router-dom'
 
 const AppRoutes = () => {
   const location = useLocation()
-
   return (
     <AnimatePresence mode="wait">
       <Routes key={location.pathname} location={location}>
         <Route path="/" element={<StartPage />} />
-        <Route path="/:chat_id" element={<ChatPage />} />
+        <Route path="/:chatId" element={<ChatPage />} />
       </Routes>
     </AnimatePresence>
   )

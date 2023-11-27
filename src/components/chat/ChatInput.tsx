@@ -20,7 +20,7 @@ export const ChatInput = () => {
       </button>
       <textarea
         placeholder="Message..."
-        className="textarea textarea-ghost bg-transparent flex-1 px-6 overflow-auto resize-none py-3 min-h-0 self-center leading-normal text-base"
+        className="textarea bg-transparent flex-1 px-6 overflow-auto py-3 min-h-0 self-center leading-normal text-base resize-none"
         onChange={handleChange}
         ref={textAreaRef}
         rows={1}
