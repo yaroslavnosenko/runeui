@@ -22,8 +22,7 @@ export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
       </div>
       <div
         className={classNames(
-          'py-3 prose prose-pre:bg-base-200 prose-pre:rounded-xl prose-pre:text-base-content',
-          [isAi ? 'prose-p:text-base-content/60' : 'prose-p:text-base-content']
+          'prose prose-pre:bg-base-200 prose-pre:rounded-xl prose-pre:text-base-content prose-p:text-base-content'
         )}
       >
         <Markdown>{message}</Markdown>

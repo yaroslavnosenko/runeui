@@ -4,7 +4,7 @@ export const ChatResolver = () => {
   return (
     <>
       <ChatHeader />
-      <ChatHistory />
+      <ChatHistory messages={[]} />
     </>
   )
 }

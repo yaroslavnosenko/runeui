@@ -1,5 +1,5 @@
 import { BottomNavigation, Dialogs } from '@/components'
-import { DialogsProvider } from '@/contexts'
+import { PromptProvider, DialogsProvider, GptContextProvider } from '@/contexts'
 import { HomePage, ChatPage } from '@/pages'
 import { AnimatePresence } from 'framer-motion'
 import { Route, HashRouter, Routes, useLocation } from 'react-router-dom'
@@ -19,11 +19,15 @@ const AppRoutes = () => {
 export const App = () => {
   return (
     <DialogsProvider>
-      <HashRouter>
-        <AppRoutes />
-        <Dialogs />
-        <BottomNavigation />
-      </HashRouter>
+      <PromptProvider>
+        <GptContextProvider>
+          <HashRouter>
+            <AppRoutes />
+            <Dialogs />
+            <BottomNavigation />
+          </HashRouter>
+        </GptContextProvider>
+      </PromptProvider>
     </DialogsProvider>
   )
 }

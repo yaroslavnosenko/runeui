@@ -1,4 +1,4 @@
 export * from './useAutosizeTextArea'
 export * from './useDialogs'
-export * from './useChats'
-export * from './useOllama'
+export * from './usePrompt'
+export * from './useGpt'
