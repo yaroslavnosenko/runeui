@@ -3,7 +3,6 @@ export enum GptProvider {
 }
 
 export type GptModel = {
-  provider: GptProvider
   name: string
   tag: string
 }
@@ -16,12 +15,12 @@ export type GptResponse = {
 export type GptRequest = {
   model: GptModel
   prompt: string
-  useContext?: boolean
 }
 
-export type GptAdapter = {
-  defaultHost: string
-  generate: (request: GptRequest) => Promise<GptResponse>
-  list: () => Promise<GptModel[]>
-  ping: () => Promise<GptProvider>
+export interface IGptAdapter {
+  readonly provider: GptProvider
+  readonly host: string
+  generate(request: GptRequest): Promise<GptResponse>
+  list(): Promise<GptModel[]>
+  ping(host: string): Promise<boolean>
 }

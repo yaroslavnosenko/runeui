@@ -2,13 +2,13 @@ import { useGpt } from '@/hooks'
 import { BiMessageSquareAdd, BiNoSignal, BiSignal5 } from 'react-icons/bi'
 
 export const HostInput = () => {
-  const { provider, host, setHost } = useGpt()
+  const { adapter, host, setHost } = useGpt()
 
   return (
     <div className="rounded-full bg-base-200 flex">
       <button className="h-14 w-14 flex items-center justify-center">
-        {provider && <BiSignal5 />}
-        {!provider && <BiNoSignal />}
+        {adapter && <BiSignal5 />}
+        {!adapter && <BiNoSignal />}
       </button>
       <input
         placeholder="http://host:port"
@@ -16,7 +16,7 @@ export const HostInput = () => {
         value={host}
         onChange={(event) => setHost(event.target.value)}
       />
-      {provider && (
+      {adapter && (
         <button className="btn bg-grad rounded-full h-14">
           <BiMessageSquareAdd />
           <p className="hidden md:block">New Chat</p>

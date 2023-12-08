@@ -16,7 +16,7 @@ export default {
           ...themes['light'],
           'base-content': '#000204',
           'base-100': '#fbfdff',
-          'base-200': '#F3F5F7',
+          'base-200': '#f1f2f3',
         },
       },
       {
