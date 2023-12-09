@@ -1,36 +1,26 @@
 import { useParams } from 'react-router-dom'
 import { ChatHeader, ChatHistory } from '@/components'
-import { useGpt, usePrompt } from '@/hooks'
-import { GptModel, MessageType } from '@/types'
-import { useEffect, useState } from 'react'
+import { useGpt, useModels, usePrompt } from '@/hooks'
+import { MessageType } from '@/types'
+import { useEffect } from 'react'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { database } from '@/database'
 
 export const ChatResolver = () => {
-  const [models, setModels] = useState<GptModel[]>([])
-  const [activeModel, setActiveModel] = useState<GptModel | null>(null)
   const { prompt } = usePrompt()
   const { adapter } = useGpt()
-  const params = useParams<{ chatId: string }>()
-  const chatId: number = parseInt(params.chatId || '')
+  const { models, activeModel } = useModels(adapter)
+
+  const chatId = parseInt(useParams()['chatId'] || '0')
+
   const messages = useLiveQuery(
     () => database.messages.where('chatId').equals(chatId).toArray(),
     [chatId]
   )
 
   useEffect(() => {
-    if (!adapter) {
-      return
-    }
-    adapter.list().then((res) => {
-      setModels(res)
-      setActiveModel(res.at(0) || null)
-    })
-  }, [adapter])
-
-  useEffect(() => {
     const onHumanMessage = async () => {
-      if (!prompt || !chatId) {
+      if (!prompt || !chatId || !adapter || !activeModel) {
         return
       }
       let chat = await database.chats.get(chatId)
@@ -43,9 +33,17 @@ export const ChatResolver = () => {
         type: MessageType.HUMAN,
         chatId,
       })
+
+      // Model
+      const result = await adapter.generate({ model: activeModel, prompt })
+      await database.messages.add({
+        content: result.message,
+        type: MessageType.AI,
+        chatId,
+      })
     }
     onHumanMessage()
-  }, [prompt, chatId])
+  }, [prompt, chatId, activeModel, adapter])
 
   return (
     <>

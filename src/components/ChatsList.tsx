@@ -1,6 +1,10 @@
 import { ChatLink } from '@/components'
-import { chats } from '@/mocks'
+import { database } from '@/database'
+import { useLiveQuery } from 'dexie-react-hooks'
 
 export const ChatsList = () => {
-  return chats.map(({ id, name }) => <ChatLink key={id} id={id} name={name} />)
+  const chats = useLiveQuery(() => database.chats.toArray())
+  return chats
+    ? chats.map((chat) => <ChatLink key={chat.id} chat={chat} />)
+    : null
 }

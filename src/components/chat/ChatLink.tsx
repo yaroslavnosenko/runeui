@@ -1,13 +1,13 @@
 import { BiBookmarkAlt } from 'react-icons/bi'
 import { HTMLAttributes } from 'react'
 import { Link } from 'react-router-dom'
+import { Chat } from '@/types'
 
 type ChatLinkProps = HTMLAttributes<HTMLAnchorElement> & {
-  name?: string
-  id: string
+  chat: Chat
 }
 
-export const ChatLink = ({ name, id, ...other }: ChatLinkProps) => {
+export const ChatLink = ({ chat: { id, name }, ...other }: ChatLinkProps) => {
   return (
     <Link
       to={'/' + id}
@@ -15,9 +15,7 @@ export const ChatLink = ({ name, id, ...other }: ChatLinkProps) => {
       {...other}
     >
       <BiBookmarkAlt className="flex-shrink-0" />
-      <p className="truncate leading-loose">
-        {name ? name : 'New Conversation'}
-      </p>
+      <p className="truncate leading-loose">{name}</p>
     </Link>
   )
 }

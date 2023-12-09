@@ -11,11 +11,11 @@ export const BottomNavigation = () => {
   const { setDialog, activeDialog } = useDialogs()
   const { pathname } = useLocation()
   const strChatId = useMatch('/:chatId')?.params.chatId
-  const chatId = parseInt(strChatId || '')
+  const chatId = parseInt(strChatId || '0')
 
   const showChatInput = pathname === '/' || activeDialog ? false : true
   const isHome = pathname === '/'
-  const chat = useLiveQuery(() => database.chats.get(chatId || 0), [chatId])
+  const chat = useLiveQuery(() => database.chats.get(chatId), [chatId])
   const chatName = chat?.name || 'New Chat'
 
   return (
