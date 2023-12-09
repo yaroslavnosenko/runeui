@@ -1,18 +1,19 @@
 import { useAutosizeTextArea, usePrompt } from '@/hooks'
 import { useRef, useState, KeyboardEvent } from 'react'
-import { BiUpArrowAlt, BiPlus } from 'react-icons/bi'
+import { BiUpArrowAlt, BiPlus, BiStopCircle } from 'react-icons/bi'
 
 export const ChatInput = () => {
   const [value, setValue] = useState<string>('')
   const textAreaRef = useRef<HTMLTextAreaElement>(null)
   useAutosizeTextArea(textAreaRef.current, value)
 
-  const { setPrompt } = usePrompt()
+  const { setPrompt, isBlocked } = usePrompt()
 
   const handleSend = () => {
     if (value) {
-      setPrompt(value.trim())
-      setValue('')
+      if (setPrompt(value.trim())) {
+        setValue('')
+      }
     }
   }
 
@@ -35,7 +36,7 @@ export const ChatInput = () => {
         value={value}
         onKeyDown={handleKeyDown}
       />
-      {value && (
+      {!isBlocked && value && (
         <button className="btn btn-circle w-12 h-12" onClick={handleSend}>
           <BiUpArrowAlt />
         </button>
@@ -43,6 +44,11 @@ export const ChatInput = () => {
       {!value && (
         <button className="btn btn-ghost text-base-100 btn-circle w-12 h-12">
           <BiPlus />
+        </button>
+      )}
+      {isBlocked && (
+        <button className="btn btn-circle w-12 h-12">
+          <BiStopCircle />
         </button>
       )}
     </div>

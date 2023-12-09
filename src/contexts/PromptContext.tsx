@@ -1,26 +1,48 @@
-import { PropsWithChildren, createContext, useEffect, useState } from 'react'
+import {
+  PropsWithChildren,
+  createContext,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react'
 
 type PromptContextValue = {
+  isBlocked: boolean
+  setIsBlocked: (value: boolean) => void
   prompt: string
-  setPrompt: (value: string) => void
+  setPrompt: (value: string) => boolean
 }
 
 export const PromptContext = createContext<PromptContextValue>({
   prompt: '',
-  setPrompt: () => console.error('Missed Provider'),
+  isBlocked: false,
+  setPrompt: () => true,
+  setIsBlocked: () => console.error('Missed Provider'),
 })
 
 export const PromptProvider = ({ children }: PropsWithChildren) => {
-  const [prompt, setPrompt] = useState<string>('')
+  const [prompt, _setPrompt] = useState<string>('')
+  const [isBlocked, setIsBlocked] = useState<boolean>(false)
 
   useEffect(() => {
     if (prompt !== '') {
-      setPrompt('')
+      _setPrompt('')
     }
-  }, [prompt, setPrompt])
+  }, [prompt, _setPrompt])
+
+  const setPrompt = useCallback(
+    (prompt: string) => {
+      if (isBlocked) return false
+      _setPrompt(prompt)
+      return true
+    },
+    [_setPrompt, isBlocked]
+  )
 
   return (
-    <PromptContext.Provider value={{ prompt, setPrompt }}>
+    <PromptContext.Provider
+      value={{ prompt, setPrompt, isBlocked, setIsBlocked }}
+    >
       {children}
     </PromptContext.Provider>
   )
