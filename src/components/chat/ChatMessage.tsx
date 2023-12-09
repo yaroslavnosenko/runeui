@@ -1,14 +1,17 @@
 import classNames from 'classnames'
-import { BiChip, BiUser } from 'react-icons/bi'
 import Markdown from 'react-markdown'
+import { BiChip, BiUser } from 'react-icons/bi'
+import { Message, MessageType } from '@/types'
 
 type ChatMessageProps = {
-  id: string
-  message: string
-  isAi: boolean
+  message: Message
 }
 
-export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
+export const ChatMessage = ({
+  message: { content, type },
+}: ChatMessageProps) => {
+  const isAi = type === MessageType.AI
+
   return (
     <div className="flex gap-x-6 flex-col md:flex-row md:items-end py-6">
       <div
@@ -25,7 +28,7 @@ export const ChatMessage = ({ message, isAi }: ChatMessageProps) => {
           'prose prose-pre:bg-base-200 prose-pre:rounded-xl prose-pre:text-base-content prose-p:text-base-content'
         )}
       >
-        <Markdown>{message}</Markdown>
+        <Markdown>{content}</Markdown>
       </div>
     </div>
   )

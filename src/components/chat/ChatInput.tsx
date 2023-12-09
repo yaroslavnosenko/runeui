@@ -11,7 +11,7 @@ export const ChatInput = () => {
 
   const handleSend = () => {
     if (value) {
-      if (setPrompt(value.trim())) {
+      if (setPrompt(value)) {
         setValue('')
       }
     }

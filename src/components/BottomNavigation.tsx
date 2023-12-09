@@ -4,16 +4,20 @@ import { motion } from 'framer-motion'
 import { useLocation, useMatch } from 'react-router-dom'
 import classNames from 'classnames'
 import { BiBookmarkAlt } from 'react-icons/bi'
-import { chats } from '@/mocks'
+import { useLiveQuery } from 'dexie-react-hooks'
+import { database } from '@/database'
 
 export const BottomNavigation = () => {
   const { setDialog, activeDialog } = useDialogs()
   const { pathname } = useLocation()
-  const chatId = useMatch('/:chatId')?.params.chatId
+  const strChatId = useMatch('/:chatId')?.params.chatId
+  const chatId = parseInt(strChatId || '')
 
   const showChatInput = pathname === '/' || activeDialog ? false : true
   const isHome = pathname === '/'
-  const chatName = chats.find(({ id }) => id === chatId)?.name || 'New Chat'
+  const chat = useLiveQuery(() => database.chats.get(chatId || 0), [chatId])
+  const chatName = chat?.name || 'New Chat'
+
   return (
     <motion.nav
       initial={{ bottom: -96, opacity: 0 }}

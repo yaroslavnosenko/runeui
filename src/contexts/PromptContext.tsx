@@ -31,9 +31,9 @@ export const PromptProvider = ({ children }: PropsWithChildren) => {
   }, [prompt, _setPrompt])
 
   const setPrompt = useCallback(
-    (prompt: string) => {
+    (newPrompt: string) => {
       if (isBlocked) return false
-      _setPrompt(prompt)
+      _setPrompt(newPrompt.trim())
       return true
     },
     [_setPrompt, isBlocked]
